@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+<!--
+Agar dapat menghasilkan tampilan yang berorientasi ke bawah, gunakan linear layour, dengan komponen
+android:orientation = "vertical" agar isi dari tampilan akan tersusun ke bawah.
+-->
+
+
+    <!--Judul-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculator"
+        android:textSize="40sp"
+        android:layout_marginTop="80sp"
+        android:textAlignment="center"
+        />
+
+        <!--Label berat badan-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Berat Badan"
+            android:layout_marginLeft="16sp"
+            android:layout_marginTop="20sp"
+           />
+<!--
+Layout dari text input, sehingga dapat diberikan style.
+Style yang digunakan tersebut berfungsi untuk menambahkan garis border / outline pada kotak input.
+hint digunakan sebagai placeholder kotak input, dimana ketika focus, placeholder akan berpindah
+ke kiri atas.
+-->
+
+    <!--Layout kotak input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan berat badan (kg)"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+        android:paddingTop="0dp"
+        >
+
+        <!--Kotak input-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/input_berat"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Label tinggi badan-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tinggi Badan"
+        android:layout_marginLeft="16sp"
+        android:layout_marginTop="20sp"
+        />
+
+    <!--Layout kotak input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan tinggi badan (cm)"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+        android:paddingTop="0dp"
+        >
+
+        <!--Kotak input-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/input_tinggi"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--
+Untuk menghasilkan button yang posisinya disamping satu sama lain / horizontal, kita dapat
+menggunakan LinearLayout lain di dalam LinearLayout di awal. Di LinearLayout yang ini, kita
+menggunakan orientation horizontal sehingga posisi button bisa di samping satu sama lain.
+-->
+
+    <!--LinearLayout horizontal-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <!--Toast Button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toast"
+            android:id="@+id/button_toast"
+            android:layout_weight="1"
+            android:layout_margin="16sp"
+            android:padding="15sp"
+            />
+
+        <!--Count Button-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Count"
+            android:id="@+id/button_count"
+            android:layout_weight="1"
+            android:layout_margin="16sp"
+            android:padding="15sp"
+            />
+    <!--Akhir dari LinearLayout Horizontal-->
+    </LinearLayout>
+
+    <!--Tampilan dari angka 0-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="140sp"
+        android:text="0"
+        android:id="@+id/count"
+        />
+
+</LinearLayout>
